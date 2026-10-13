@@ -1,0 +1,348 @@
+/* Velvet Crown Hotel - Luxury Design System */
+:root {
+  --navy-950: #050b14;
+  --navy-900: #0a1526;
+  --navy-850: #0f1f38;
+  --navy-800: #162a4a;
+  --navy-700: #1f3b64;
+  --navy-600: #2b4f84;
+  
+  --gold-300: #f4dc8f;
+  --gold-400: #e5c366;
+  --gold-500: #d4af37;
+  --gold-600: #b38e22;
+  --gold-700: #8c6e15;
+  --gold-gradient: linear-gradient(135deg, #f8e59f 0%, #d4af37 50%, #aa841c 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #fff0b8 0%, #e2c04d 50%, #c49924 100%);
+  
+  --cream-50: #faf8f5;
+  --cream-100: #f5f0e6;
+  --cream-200: #ebdcc5;
+  --cream-300: #dfc8a5;
+  
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #f8fafc;
+  --text-light-muted: #94a3b8;
+  
+  --emerald-500: #10b981;
+  --crimson-500: #ef4444;
+  --amber-500: #f59e0b;
+  
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --shadow-sm: 0 2px 4px rgba(5, 11, 20, 0.06);
+  --shadow-md: 0 6px 16px rgba(5, 11, 20, 0.1);
+  --shadow-lg: 0 12px 32px rgba(5, 11, 20, 0.16);
+  --shadow-gold: 0 8px 24px rgba(212, 175, 55, 0.25);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream-50);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+  letter-spacing: 0.1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+/* Luxury Layout & Containers */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Buttons */
+.btn-gold {
+  background: var(--gold-gradient);
+  color: var(--navy-950);
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: var(--shadow-gold);
+  transition: all var(--transition-normal);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+}
+
+.btn-gold:hover {
+  background: var(--gold-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.35);
+}
+
+.btn-outline-gold {
+  border: 1.5px solid var(--gold-500);
+  color: var(--gold-400);
+  background: transparent;
+  font-weight: 600;
+  padding: 11px 26px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-normal);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-300);
+  border-color: var(--gold-300);
+  transform: translateY(-2px);
+}
+
+.btn-navy {
+  background: var(--navy-900);
+  color: var(--gold-400);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-normal);
+}
+
+.btn-navy:hover {
+  background: var(--navy-800);
+  border-color: var(--gold-500);
+  color: var(--gold-300);
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background var(--transition-fast);
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+}
+
+/* Glassmorphism & Luxury Cards */
+.glass-panel-dark {
+  background: rgba(10, 21, 38, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--text-light);
+}
+
+.luxury-card-light {
+  background: var(--color-white, #ffffff);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.luxury-card-light:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Gold Gradient Text */
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-gold {
+  background: rgba(212, 175, 55, 0.15);
+  color: #926f12;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-info {
+  background: rgba(59, 130, 246, 0.15);
+  color: #1d4ed8;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge-warning {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--navy-900);
+}
+
+.form-label-dark {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--gold-300);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--gold-500);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.form-input-dark, .form-select-dark {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--navy-850);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--text-light);
+  transition: all var(--transition-fast);
+}
+
+.form-input-dark:focus, .form-select-dark:focus {
+  outline: none;
+  border-color: var(--gold-400);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Print Styles for Invoices */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  nav, footer, .no-print, .btn-print {
+    display: none !important;
+  }
+  .invoice-container {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
